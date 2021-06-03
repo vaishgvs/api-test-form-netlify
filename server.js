@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.static('public'));
 
-app.get('/sum', function(req,res){
+app.get('../sum', function(req,res){
     var sum = parseInt(req.query.First_Number) + parseInt(req.query.Second_Number);
     response={
         First_Number: req.query.First_Number,
