@@ -30,5 +30,5 @@ app.get('/sum', function(req,res){
     res.send("Hello World!");
 })*/
 //app.use('/users', userRouter);
-//const port = process.env.PORT || 5000;
-//app.listen(port, () => 'Server running on port ${port}');
+const port = process.env.PORT || 5000;
+app.listen(port, () => 'Server running on port ${port}');
