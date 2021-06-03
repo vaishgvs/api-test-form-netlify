@@ -1,5 +1,5 @@
-/*'use strict'
-const switcher = document.querySelector('.btn');
+'use strict'
+/*const switcher = document.querySelector('.btn');
 switcher.addEventListener('click',function() {
     document.body.classList.toggle('dark-theme')
 
@@ -25,25 +25,44 @@ switcher2.addEventListener('click',function() {
     console.log('current text content:' + this.textContent);
 });
 */
-/*var sum=Sum(a,b,c,d);
-
-function Sum(a,b,c,d){
-    return a + b + c + d;
-}*/
 
 /*
-//require('log-timestamp');
+
 function logSubmit(event){
     console.log('Form submitted! Time stamp:' );
     event.preventDefault();
 }
 
-let form = document.getElementById('form');
-let number1 = form.elements[0];
-let number2 = form.elements[1];
-form.addEventListener('submit',(event) => {
+app.get('/sum', function(req,res){
+    var sum = parseInt(req.query.First_Number) + parseInt(req.query.Second_Number);
+    response={
+        First_Number: req.query.First_Number,
+        Second_Number:req.query.Second_Number,
+        Sum: sum
+    };
+    console.log(response);
+    res.end(JSON.stringify(response));
+})*/
 
-})
 
-const log = document.getElementById('log');
-form.addEventListener('submit', logSubmit);*/
+/*document.getElementById('form').addEventListener('submit', function(event){
+    event.preventDefault();
+    document.getElementById("sum").value = parseInt(document.getElementById("no1").value) + parseInt(document.getElementById("no2").value);    
+    console.log("submit done");
+    
+})*/
+
+
+function sumtest(event){
+    event.preventDefault();
+    //document.getElementById("sum").value = parseInt(document.getElementById("no1").value) + parseInt(document.getElementById("no2").value);    
+    console.log("handler function");
+    var num1= parseInt(document.getElementById("no1").value);
+    var num2= parseInt(document.getElementById("no2").value);
+    var sum = sumdo(num1,num2);
+    document.getElementById("sum").value = sum;    
+}
+
+function sumdo(a,b){
+    return parseInt(a) + parseInt(b);
+}
